@@ -29,23 +29,36 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    bootctrl.lahaina.recovery \
+    android.hardware.boot@1.1-impl-qti.recovery \
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
 
 PRODUCT_PACKAGES += \
-    bootctrl.lahaina
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.lahaina \
-    libgptutils \
-    libz \
-    libcutils
-
-PRODUCT_PACKAGES += \
+    checkpoint_gc \
     otapreopt_script \
-    cppreopts.sh \
+    cppreopts.sh
+
+# Fastboot
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
+# Update engine
+PRODUCT_PACKAGES += \
     update_engine \
-    update_verifier \
-    update_engine_sideload
+    update_engine_sideload \
+    update_verifier
