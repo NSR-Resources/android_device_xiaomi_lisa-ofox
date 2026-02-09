@@ -80,6 +80,21 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
+# Cmdline
+VENDOR_CMDLINE += androidboot.console=ttyMSM0
+VENDOR_CMDLINE += androidboot.hardware=qcom
+VENDOR_CMDLINE += androidboot.memcg=1
+VENDOR_CMDLINE += androidboot.usbcontroller=a600000.dwc3
+VENDOR_CMDLINE += cgroup.memory=nokmem,nosocket
+VENDOR_CMDLINE += console=ttyMSM0,115200n8
+VENDOR_CMDLINE += loop.max_part=7
+VENDOR_CMDLINE += msm_rtb.filter=0x237
+VENDOR_CMDLINE += service_locator.enable=1
+VENDOR_CMDLINE += swiotlb=0
+VENDOR_CMDLINE += pcie_ports=compat
+VENDOR_CMDLINE += iptable_raw.raw_before_defrag=1
+VENDOR_CMDLINE += ip6table_raw.raw_before_defrag=1
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
