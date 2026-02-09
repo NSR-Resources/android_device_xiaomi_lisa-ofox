@@ -73,3 +73,9 @@ PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/qcom-caf/bootctrl \
+    vendor/qcom/opensource/commonsys-intf/display
