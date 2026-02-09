@@ -96,14 +96,6 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_USE_FSCRYPT_POLICY := 2
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
-BOARD_USES_METADATA_PARTITION := true
-
 # VNDK
 PRODUCT_PACKAGES += \
     vndservicemanager
