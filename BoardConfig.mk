@@ -96,6 +96,9 @@ VENDOR_CMDLINE += pcie_ports=compat
 VENDOR_CMDLINE += iptable_raw.raw_before_defrag=1
 VENDOR_CMDLINE += ip6table_raw.raw_before_defrag=1
 
+# Header
+BOARD_KERNEL_CMDLINE := $(VENDOR_CMDLINE)
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
