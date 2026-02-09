@@ -94,6 +94,11 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
+# Fstab
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/charger_fstab.qti:$(TARGET_RECOVERY_OUT)/$(TARGET_COPY_OUT_ROOT)/$(TARGET_COPY_OUT_VENDOR)/etc/charger_fstab.qti \
+    $(DEVICE_PATH)/rootdir/etc/charger_fw_fstab.qti:$(TARGET_RECOVERY_OUT)/$(TARGET_COPY_OUT_ROOT)/$(TARGET_COPY_OUT_VENDOR)/etc/charger_fw_fstab.qti
+
 # Qcom decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
