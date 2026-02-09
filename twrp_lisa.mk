@@ -17,6 +17,8 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Inherit any TWRP-specific settings
+$(call inherit-product-if-exists, $(DEVICE_PATH)/twrp_config.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
