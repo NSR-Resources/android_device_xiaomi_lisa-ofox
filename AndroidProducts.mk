@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_lisa.mk
+    $(LOCAL_DIR)/twrp_lisa.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_lisa-user \
-    omni_lisa-userdebug \
-    omni_lisa-eng
+    twrp_lisa-user \
+    twrp_lisa-userdebug \
+    twrp_lisa-eng
