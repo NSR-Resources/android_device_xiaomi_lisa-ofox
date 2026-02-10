@@ -60,4 +60,7 @@ OF_MAINTAINER := NSR
 # add dmctl
 OF_USE_DMCTL := 1
 
+# frp
+OF_ENABLE_FRP_ADDON := 1
+
 #
