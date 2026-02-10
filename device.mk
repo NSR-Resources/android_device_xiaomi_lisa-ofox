@@ -26,6 +26,26 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_TARGET_VNDK_VERSION := 31
 
+# Dynamic
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# A/B Updater
+AB_OTA_UPDATER := true
+
+# A/B
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    mi_ext \
+    odm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
