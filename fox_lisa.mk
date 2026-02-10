@@ -57,4 +57,7 @@ OF_NO_TREBLE_COMPATIBILITY_CHECK := 1
 # maintainer
 OF_MAINTAINER := NSR
 
+# add dmctl
+OF_USE_DMCTL := 1
+
 #
