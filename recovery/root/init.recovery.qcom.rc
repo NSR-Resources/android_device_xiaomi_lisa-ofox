@@ -54,9 +54,18 @@ on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
     write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
 
+service overrideprops /system/bin/overrideprops.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 on boot
     start boot-hal-1-1
     start health-hal-2-1
+    start overrideprops
     setprop sys.usb.config mtp,adb
+
 #
 
