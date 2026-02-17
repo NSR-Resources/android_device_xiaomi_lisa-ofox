@@ -123,6 +123,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/charger_fstab.qti:$(TARGET_RECOVERY_OUT)/$(TARGET_COPY_OUT_ROOT)/$(TARGET_COPY_OUT_VENDOR)/etc/charger_fstab.qti \
     $(DEVICE_PATH)/rootdir/etc/charger_fw_fstab.qti:$(TARGET_RECOVERY_OUT)/$(TARGET_COPY_OUT_ROOT)/$(TARGET_COPY_OUT_VENDOR)/etc/charger_fw_fstab.qti
 
+# Task profile
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/task_profiles.json:$(TARGET_RECOVERY_OUT)/$(TARGET_COPY_OUT_ROOT)/$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles.json \
+    $(DEVICE_PATH)/rootdir/etc/task_profiles_v1.json:$(TARGET_RECOVERY_OUT)/$(TARGET_COPY_OUT_ROOT)/$(TARGET_COPY_OUT_SYSTEM)/etc/task_profiles_v1.json
+
 # Qcom decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
